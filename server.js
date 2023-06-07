@@ -42,6 +42,7 @@ io.on('connection',(socket)=>{
     }) 
     socket.on('message',(newMessage)=>{
         const sendMessage = newMessage.message
+        console.log(sendMessage,'message from ODOM')
         const id = newMessage.userId
         socket.in(id).emit('received',sendMessage)
     })
